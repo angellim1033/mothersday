@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Mother's Day!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: url('pics/wallpaper.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #444;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+            color: #e91e63;
+            z-index: 2;
+            position: relative;
+        }
+
+        .message,
+        .gallery,
+        .buttons,
+        footer,
+        .hidden {
+            z-index: 2;
+            position: relative;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 1rem auto;
+            background: rgba(255, 238, 243, 0.95);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(233, 30, 99, 0.1);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery img {
+            width: 220px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .buttons {
+            margin-top: 2rem;
+        }
+
+        button {
+            margin: 0.5rem;
+            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            background-color: #f06292;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ec407a;
+        }
+
+        .hidden {
+            display: none;
+            margin-top: 1rem;
+            background: rgba(255, 240, 245, 0.9);
+            padding: 1rem;
+            border-radius: 10px;
+            font-style: italic;
+            color: #c2185b;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #eee;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        #fireworksCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Happy Mother’s Day 💐</h1>
+    <div class="message">
+        <p>Dear Mom,</p>
+        <p>I just want to tell you how much I love and appreciate you. Over the years, you’ve become more than just my
+            mom—you’ve truly become my best friend. You're the person I confide in, laugh with, and enjoy life beside.
+            The little things we do together—eating, shopping, or just being in each other's company—mean more to me
+            than I can ever fully express.
+            <br><br>
+            I read somewhere that we’re all experiencing life for the first time, and there’s no right or wrong way to
+            live it. As long as we enjoy our days to the fullest, that’s really all we can do. And with you, those days
+            feel fuller, lighter, and more meaningful ❤️
+            <br><br>
+            You’ve been such a wonderful mom, and all I wish for is that you continue to be happy, healthy, and at
+            peace. I miss you so much and can’t wait to see you soon. I’m really looking forward to all the better days
+            ahead with you.
+        </p>
+        <p>Love,<br>Your Favorite Child 😉</p>
+    </div>
+
+    <div class="buttons">
+        <button onclick="showHug()">Click for a Hug 🤗</button>
+        <button onclick="showMemory()">My Favorite Memory 🥰</button>
+        <button onclick="showSurprise()">Open a Surprise 💌</button>
+        <button onclick="window.open('https://www.youtube.com/watch?v=7NrQei36fJk', '_blank')">Play Our Song 🎵</button>
+
+    </div>
+
+    <div id="hug" class="hidden">
+        <img src="pics/old.jpg" alt="Hug from me!"
+            style="width:250px; margin-top:1rem; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+        <p>*HUGGGG* 🤗 Sending you the biggest virtual hug ever!</p>
+    </div>
+    <div id="memory" class="hidden">
+        <img src="pics/carry.jpg" alt="Hug from me!"
+            style="width:250px; margin-top:1rem; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1);"><br>
+        I just remember I was so tired one day after school and you offered to help me carry
+        my bag haha<br>
+        I was touched ❤️<br>
+
+    </div>
+    <div id="surprise" class="hidden">
+        <img src="pics/toot.jpg" width="250" style="margin-top: 1rem; border-radius: 10px;"><br>
+        Surprise! We so toot with same hairstyle 😪😪
+    </div><br>
+
+
+    <audio id="song" src="your-song.mp3"></audio>
+
+    <div class="gallery">
+        <img src="pics/gbtb.jpg" alt="Mom and me" width="70">
+        <img src="pics/mother.jpg" alt="Family moment" width="140">
+        <img src="pics/funny.jpg" alt="Memory together" width="70">
+    </div>
+
+    <div class="message" style="margin-top: 1rem;">
+        <p style="font-size: 0.9rem;">
+            Even though I can’t be there today, I’m sending you all the good vibes and positive energy.
+            When you’re back, we’re going to have a fancy dinner — just you and me, because I’m that cool. 😎
+            Also, I hope you’re super proud of the awesome person I’ve become (I know, I’m pretty impressive, right?).
+            Can’t wait to see you soon!!
+        </p>
+    </div>
+
+    <footer>
+        Made with love 💖
+    </footer>
+
+    <script>
+        function showHug() {
+            hideAll();
+            document.getElementById('hug').style.display = 'block';
+        }
+
+        function showMemory() {
+            hideAll();
+            document.getElementById('memory').style.display = 'block';
+        }
+
+        function showSurprise() {
+            hideAll();
+            document.getElementById('surprise').style.display = 'block';
+        }
+
+        function playSong() {
+            hideAll();
+            document.getElementById('song').play();
+            alert("Playing our special song 💕");
+        }
+
+        function hideAll() {
+            document.getElementById('hug').style.display = 'none';
+            document.getElementById('memory').style.display = 'none';
+            document.getElementById('surprise').style.display = 'none';
+        }
+    </script>
+
+    <canvas id="fireworksCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('fireworksCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        canvas.style.position = 'fixed';
+        canvas.style.top = 0;
+        canvas.style.left = 0;
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = -1;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Particle {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.radius = Math.random() * 2 + 1;
+                this.color = color;
+                this.speedX = Math.random() * 6 - 3;
+                this.speedY = Math.random() * -6 - 2;
+                this.gravity = 0.05;
+                this.alpha = 1;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.speedY += this.gravity;
+                this.alpha -= 0.01;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function createFirework() {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height / 2;
+            const colors = ['#ff4e91', '#ffd166', '#83d0f2', '#a1ffce', '#f2a2e8'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+
+            for (let i = 0; i < 40; i++) {
+                particles.push(new Particle(x, y, color));
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p, i) => {
+                p.update();
+                p.draw();
+                if (p.alpha <= 0) {
+                    particles.splice(i, 1);
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+
+        setInterval(createFirework, 800);
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+
+</body>
+
+</html>
